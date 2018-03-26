@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: OpenCensus::Trace::SpanBuilder::PieceBuilder
+  
+    &mdash; Documentation by YARD 0.9.12
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "OpenCensus::Trace::SpanBuilder::PieceBuilder";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../OpenCensus.html" title="OpenCensus (module)">OpenCensus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Trace.html" title="OpenCensus::Trace (module)">Trace</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../SpanBuilder.html" title="OpenCensus::Trace::SpanBuilder (class)">SpanBuilder</a></span></span>
+     &raquo; 
+    <span class="title">PieceBuilder</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: OpenCensus::Trace::SpanBuilder::PieceBuilder
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">OpenCensus::Trace::SpanBuilder::PieceBuilder</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/opencensus/trace/span_builder.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Internal class that builds pieces of a span, honoring limits.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  <dl class="constants">
+    
+      <dt id="MIN_INT-constant" class="">MIN_INT =
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Minimum value of int64</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='op'>-</span><span class='int'>0x10000000000000000</span></pre></dd>
+    
+      <dt id="MAX_INT-constant" class="">MAX_INT =
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Maximum value of int64</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='int'>0xffffffffffffffff</span></pre></dd>
+    
+  </dl>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#convert_annotations-instance_method" title="#convert_annotations (instance method)">#<strong>convert_annotations</strong>(raw_annotations)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Build a canonical annotations list, truncating if necessary.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#convert_attributes-instance_method" title="#convert_attributes (instance method)">#<strong>convert_attributes</strong>(attrs)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Build a canonical attributes hash, truncating if necessary.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#convert_links-instance_method" title="#convert_links (instance method)">#<strong>convert_links</strong>(raw_links)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Build a canonical links list, truncating if necessary.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#convert_message_events-instance_method" title="#convert_message_events (instance method)">#<strong>convert_message_events</strong>(raw_message_events)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Build a canonical message list, truncating if necessary.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#convert_status-instance_method" title="#convert_status (instance method)">#<strong>convert_status</strong>(status_code, status_message)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Build a canonical status object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(max_attributes: nil, max_stack_frames: nil, max_annotations: nil, max_message_events: nil, max_links: nil, max_string_length: nil)  &#x21d2; PieceBuilder </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initializer for PieceBuilder.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#truncatable_string-instance_method" title="#truncatable_string (instance method)">#<strong>truncatable_string</strong>(str)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Build a truncatable string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#truncate_stack_trace-instance_method" title="#truncate_stack_trace (instance method)">#<strong>truncate_stack_trace</strong>(raw_trace)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Build a canonical stack trace, truncating if necessary.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(max_attributes: nil, max_stack_frames: nil, max_annotations: nil, max_message_events: nil, max_links: nil, max_string_length: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="OpenCensus::Trace::SpanBuilder::PieceBuilder (class)">PieceBuilder</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initializer for PieceBuilder</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/opencensus/trace/span_builder.rb', line 443</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span> <span class='label'>max_attributes:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+               <span class='label'>max_stack_frames:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+               <span class='label'>max_annotations:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+               <span class='label'>max_message_events:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+               <span class='label'>max_links:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+               <span class='label'>max_string_length:</span> <span class='kw'>nil</span>
+  <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../OpenCensus.html" title="OpenCensus (module)">OpenCensus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Trace.html" title="OpenCensus::Trace (module)">Trace</a></span></span><span class='period'>.</span><span class='id identifier rubyid_config'><span class='object_link'><a href="../../Trace.html#config-class_method" title="OpenCensus::Trace.config (method)">config</a></span></span>
+  <span class='ivar'>@max_attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_max_attributes'>max_attributes</span> <span class='op'>||</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_default_max_attributes'>default_max_attributes</span>
+  <span class='ivar'>@max_stack_frames</span> <span class='op'>=</span>
+    <span class='id identifier rubyid_max_stack_frames'>max_stack_frames</span> <span class='op'>||</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_default_max_stack_frames'>default_max_stack_frames</span>
+  <span class='ivar'>@max_annotations</span> <span class='op'>=</span> <span class='id identifier rubyid_max_annotations'>max_annotations</span> <span class='op'>||</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_default_max_annotations'>default_max_annotations</span>
+  <span class='ivar'>@max_message_events</span> <span class='op'>=</span>
+    <span class='id identifier rubyid_max_message_events'>max_message_events</span> <span class='op'>||</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_default_max_message_events'>default_max_message_events</span>
+  <span class='ivar'>@max_links</span> <span class='op'>=</span> <span class='id identifier rubyid_max_links'>max_links</span> <span class='op'>||</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_default_max_links'>default_max_links</span>
+  <span class='ivar'>@max_string_length</span> <span class='op'>=</span>
+    <span class='id identifier rubyid_max_string_length'>max_string_length</span> <span class='op'>||</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_default_max_string_length'>default_max_string_length</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="convert_annotations-instance_method">
+  
+    #<strong>convert_annotations</strong>(raw_annotations)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Build a canonical annotations list, truncating if necessary</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/opencensus/trace/span_builder.rb', line 502</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_convert_annotations'>convert_annotations</span> <span class='id identifier rubyid_raw_annotations'>raw_annotations</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_raw_annotations'>raw_annotations</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ann'>ann</span><span class='op'>|</span>
+    <span class='kw'>break</span> <span class='kw'>if</span> <span class='ivar'>@max_annotations</span> <span class='op'>!=</span> <span class='int'>0</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;=</span> <span class='ivar'>@max_annotations</span>
+    <span class='id identifier rubyid_attrs'>attrs</span> <span class='op'>=</span> <span class='id identifier rubyid_convert_attributes'>convert_attributes</span> <span class='id identifier rubyid_ann'>ann</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span>
+    <span class='id identifier rubyid_dropped_attributes_count'>dropped_attributes_count</span> <span class='op'>=</span> <span class='id identifier rubyid_ann'>ann</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>-</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>&lt;&lt;</span>
+      <span class='const'><span class='object_link'><a href="../../../OpenCensus.html" title="OpenCensus (module)">OpenCensus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Trace.html" title="OpenCensus::Trace (module)">Trace</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Annotation.html" title="OpenCensus::Trace::Annotation (class)">Annotation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Annotation.html#initialize-instance_method" title="OpenCensus::Trace::Annotation#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+        <span class='id identifier rubyid_truncatable_string'>truncatable_string</span><span class='lparen'>(</span><span class='id identifier rubyid_ann'>ann</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span><span class='rparen'>)</span><span class='comma'>,</span>
+        <span class='label'>attributes:</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='comma'>,</span>
+        <span class='label'>dropped_attributes_count:</span> <span class='id identifier rubyid_dropped_attributes_count'>dropped_attributes_count</span><span class='comma'>,</span>
+        <span class='label'>time:</span> <span class='id identifier rubyid_ann'>ann</span><span class='period'>.</span><span class='id identifier rubyid_time'>time</span>
+      <span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="convert_attributes-instance_method">
+  
+    #<strong>convert_attributes</strong>(attrs)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Build a canonical attributes hash, truncating if necessary</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/opencensus/trace/span_builder.rb', line 465</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_convert_attributes'>convert_attributes</span> <span class='id identifier rubyid_attrs'>attrs</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+    <span class='kw'>break</span> <span class='kw'>if</span> <span class='ivar'>@max_attributes</span> <span class='op'>!=</span> <span class='int'>0</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;=</span> <span class='ivar'>@max_attributes</span>
+    <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span> <span class='op'>=</span>
+      <span class='kw'>case</span> <span class='id identifier rubyid_v'>v</span>
+      <span class='kw'>when</span> <span class='const'>Integer</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_v'>v</span> <span class='op'>&gt;=</span> <span class='const'><span class='object_link'><a href="#MIN_INT-constant" title="OpenCensus::Trace::SpanBuilder::PieceBuilder::MIN_INT (constant)">MIN_INT</a></span></span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_v'>v</span> <span class='op'>&lt;=</span> <span class='const'><span class='object_link'><a href="#MAX_INT-constant" title="OpenCensus::Trace::SpanBuilder::PieceBuilder::MAX_INT (constant)">MAX_INT</a></span></span>
+          <span class='id identifier rubyid_v'>v</span>
+        <span class='kw'>else</span>
+          <span class='id identifier rubyid_truncatable_string'>truncatable_string</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+        <span class='kw'>end</span>
+      <span class='kw'>when</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../TruncatableString.html" title="OpenCensus::Trace::TruncatableString (class)">TruncatableString</a></span></span>
+        <span class='id identifier rubyid_v'>v</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_truncatable_string'>truncatable_string</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+      <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="convert_links-instance_method">
+  
+    #<strong>convert_links</strong>(raw_links)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Build a canonical links list, truncating if necessary</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/opencensus/trace/span_builder.rb', line 544</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_convert_links'>convert_links</span> <span class='id identifier rubyid_raw_links'>raw_links</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_raw_links'>raw_links</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_lnk'>lnk</span><span class='op'>|</span>
+    <span class='kw'>break</span> <span class='kw'>if</span> <span class='ivar'>@max_links</span> <span class='op'>!=</span> <span class='int'>0</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;=</span> <span class='ivar'>@max_links</span>
+    <span class='id identifier rubyid_attrs'>attrs</span> <span class='op'>=</span> <span class='id identifier rubyid_convert_attributes'>convert_attributes</span> <span class='id identifier rubyid_lnk'>lnk</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span>
+    <span class='id identifier rubyid_dropped_attributes_count'>dropped_attributes_count</span> <span class='op'>=</span> <span class='id identifier rubyid_lnk'>lnk</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>-</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>&lt;&lt;</span>
+      <span class='const'><span class='object_link'><a href="../../../OpenCensus.html" title="OpenCensus (module)">OpenCensus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Trace.html" title="OpenCensus::Trace (module)">Trace</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Link.html" title="OpenCensus::Trace::Link (class)">Link</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Link.html#initialize-instance_method" title="OpenCensus::Trace::Link#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+        <span class='id identifier rubyid_lnk'>lnk</span><span class='period'>.</span><span class='id identifier rubyid_trace_id'>trace_id</span><span class='comma'>,</span>
+        <span class='id identifier rubyid_lnk'>lnk</span><span class='period'>.</span><span class='id identifier rubyid_span_id'>span_id</span><span class='comma'>,</span>
+        <span class='label'>type:</span> <span class='id identifier rubyid_lnk'>lnk</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span>
+        <span class='label'>attributes:</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='comma'>,</span>
+        <span class='label'>dropped_attributes_count:</span> <span class='id identifier rubyid_dropped_attributes_count'>dropped_attributes_count</span>
+      <span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="convert_message_events-instance_method">
+  
+    #<strong>convert_message_events</strong>(raw_message_events)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Build a canonical message list, truncating if necessary</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/opencensus/trace/span_builder.rb', line 523</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_convert_message_events'>convert_message_events</span> <span class='id identifier rubyid_raw_message_events'>raw_message_events</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_raw_message_events'>raw_message_events</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_evt'>evt</span><span class='op'>|</span>
+    <span class='kw'>break</span> <span class='kw'>if</span> <span class='ivar'>@max_message_events</span> <span class='op'>!=</span> <span class='int'>0</span> <span class='op'>&amp;&amp;</span>
+             <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;=</span> <span class='ivar'>@max_message_events</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>&lt;&lt;</span>
+      <span class='const'><span class='object_link'><a href="../../../OpenCensus.html" title="OpenCensus (module)">OpenCensus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Trace.html" title="OpenCensus::Trace (module)">Trace</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../MessageEvent.html" title="OpenCensus::Trace::MessageEvent (class)">MessageEvent</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../MessageEvent.html#initialize-instance_method" title="OpenCensus::Trace::MessageEvent#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+        <span class='id identifier rubyid_evt'>evt</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span>
+        <span class='id identifier rubyid_evt'>evt</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+        <span class='id identifier rubyid_evt'>evt</span><span class='period'>.</span><span class='id identifier rubyid_uncompressed_size'>uncompressed_size</span><span class='comma'>,</span>
+        <span class='label'>compressed_size:</span> <span class='id identifier rubyid_evt'>evt</span><span class='period'>.</span><span class='id identifier rubyid_compressed_size'>compressed_size</span><span class='comma'>,</span>
+        <span class='label'>time:</span> <span class='id identifier rubyid_evt'>evt</span><span class='period'>.</span><span class='id identifier rubyid_time'>time</span>
+      <span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="convert_status-instance_method">
+  
+    #<strong>convert_status</strong>(status_code, status_message)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Build a canonical status object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+566
+567
+568
+569</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/opencensus/trace/span_builder.rb', line 566</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_convert_status'>convert_status</span> <span class='id identifier rubyid_status_code'>status_code</span><span class='comma'>,</span> <span class='id identifier rubyid_status_message'>status_message</span>
+  <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>||</span> <span class='id identifier rubyid_status_message'>status_message</span>
+  <span class='const'><span class='object_link'><a href="../Status.html" title="OpenCensus::Trace::Status (class)">Status</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Status.html#initialize-instance_method" title="OpenCensus::Trace::Status#initialize (method)">new</a></span></span> <span class='id identifier rubyid_status_code'>status_code</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='id identifier rubyid_status_message'>status_message</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="truncatable_string-instance_method">
+  
+    #<strong>truncatable_string</strong>(str)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Build a truncatable string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/opencensus/trace/span_builder.rb', line 575</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_truncatable_string'>truncatable_string</span> <span class='id identifier rubyid_str'>str</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_str'>str</span> <span class='kw'>if</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'><span class='object_link'><a href="../TruncatableString.html" title="OpenCensus::Trace::TruncatableString (class)">TruncatableString</a></span></span>
+  <span class='id identifier rubyid_orig_str'>orig_str</span> <span class='op'>=</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_encode'>encode</span> <span class='const'>Encoding</span><span class='op'>::</span><span class='const'>UTF_8</span><span class='comma'>,</span>
+                        <span class='label'>invalid:</span> <span class='symbol'>:replace</span><span class='comma'>,</span>
+                        <span class='label'>undef:</span> <span class='symbol'>:replace</span>
+  <span class='kw'>if</span> <span class='ivar'>@max_string_length</span> <span class='op'>!=</span> <span class='int'>0</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@max_string_length</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_bytesize'>bytesize</span>
+    <span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='id identifier rubyid_truncate_str'>truncate_str</span> <span class='id identifier rubyid_orig_str'>orig_str</span><span class='comma'>,</span> <span class='ivar'>@max_string_length</span>
+    <span class='id identifier rubyid_truncated_bytes'>truncated_bytes</span> <span class='op'>=</span> <span class='id identifier rubyid_orig_str'>orig_str</span><span class='period'>.</span><span class='id identifier rubyid_bytesize'>bytesize</span> <span class='op'>-</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_bytesize'>bytesize</span>
+    <span class='const'><span class='object_link'><a href="../TruncatableString.html" title="OpenCensus::Trace::TruncatableString (class)">TruncatableString</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../TruncatableString.html#initialize-instance_method" title="OpenCensus::Trace::TruncatableString#initialize (method)">new</a></span></span> <span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='label'>truncated_byte_count:</span> <span class='id identifier rubyid_truncated_bytes'>truncated_bytes</span>
+  <span class='kw'>else</span>
+    <span class='const'><span class='object_link'><a href="../TruncatableString.html" title="OpenCensus::Trace::TruncatableString (class)">TruncatableString</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../TruncatableString.html#initialize-instance_method" title="OpenCensus::Trace::TruncatableString#initialize (method)">new</a></span></span> <span class='id identifier rubyid_orig_str'>orig_str</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="truncate_stack_trace-instance_method">
+  
+    #<strong>truncate_stack_trace</strong>(raw_trace)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Build a canonical stack trace, truncating if necessary</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+490
+491
+492
+493
+494
+495
+496</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/opencensus/trace/span_builder.rb', line 490</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_truncate_stack_trace'>truncate_stack_trace</span> <span class='id identifier rubyid_raw_trace'>raw_trace</span>
+  <span class='kw'>if</span> <span class='ivar'>@max_stack_frames</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span> <span class='op'>||</span> <span class='id identifier rubyid_raw_trace'>raw_trace</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&lt;=</span> <span class='ivar'>@max_stack_frames</span>
+    <span class='id identifier rubyid_raw_trace'>raw_trace</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raw_trace'>raw_trace</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='ivar'>@max_stack_frames</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Mar 26 23:07:53 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.12 (ruby-2.5.0).
+</div>
+
+    </div>
+  </body>
+</html>
